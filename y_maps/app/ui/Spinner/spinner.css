@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.loading {
+  font-family: "Roboto";
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.darken {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* backgroundColor: `rgba(0, 0, 0, ${darkenAmount})`; */
+    /* backdropFilter: `blur(${blurAmount}px)`, */
+    /* WebkitBackdropFilter: `blur(${blurAmount}px)`, // Safari support */
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+    opacity: 1;
+    pointer-events: all;
+}
+
+.cube-hidden {
+  content-visibility: hidden;
+  contain: layout style size;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+svg {
+  height: 15%;
+  width: 15%;
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+}
