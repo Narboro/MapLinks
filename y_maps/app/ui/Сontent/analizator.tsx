@@ -14,6 +14,10 @@ const inputStyle: CSSProperties = {
 	padding: '5px',
 };
 
+const outputStyle: CSSProperties = {
+	height: 'calc(100% - 40px)',
+};
+
 const addressInput: CSSProperties = {
 	padding: "2px 10px",
 };
@@ -49,13 +53,10 @@ export const Analizator = () => {
 			<h1>Распознанные адреса:</h1>
 
 			{parsedAddress.length > 0 && (
-				// <div className="flex flex-wrap text-sm space-y-3">
-				<div className="inline-flex flex-wrap flex-col justify-start items-start w-full h-full text-sm">
+				<div style={outputStyle} className="inline-flex flex-wrap flex-col overflow-auto justify-start items-start w-full text-sm">
 					{parsedAddress.map((address, index) => (
 						<span
 							key={index}
-							// className="flex items-center text-lg justify-self-start"
-							// className="inline-flex"
 							style={{
 								...addressInput,
 								backgroundColor: getBackgroundColor(index, parsedAddress.length),

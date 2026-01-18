@@ -5,12 +5,11 @@ import React, { CSSProperties, useRef, useState } from 'react'
 const inputStyle: CSSProperties = {
 	display: 'flex',
 	flexDirection: 'column',
-	alignItems: 'center',
+	// alignItems: 'center',
 	justifyContent: 'center',
 	width: '100%',
 	height: '100%',
 	gap: '10px',
-	// border: '1px #A2A2A2 solid',
 	borderRadius: '8px',
 	padding: '5px',
 };
@@ -19,9 +18,9 @@ const addressInput: CSSProperties = {
 	padding: "4px 6px",
 };
 
-// interface ChildProps {
-// 	onAddressUpdate: (newAddress: string | string[] | undefined) => void;
-// }
+const addPadding: CSSProperties = {
+	padding: "10px",
+};
 
 export const InputBlock = () => {
 
@@ -51,10 +50,25 @@ export const InputBlock = () => {
 		}, 500);
 	}
 
+	const handleClick = () => {
+		console.log("clicker");
+	}
+
 	return (
 		<div style={inputStyle} className='custom-input'>
-			<h1>Получение ссылок на карту по введённым адресам</h1>
-			<p>Введите адреса для поиска через точку с запятой (;) или звездочку (*)</p>
+			<div className='flex justify-between'>
+				<div className='inline-block'>
+					<h1>Получение ссылок на карту по введённым адресам</h1>
+					<p>Введите адреса для поиска через точку с запятой (;) или звездочку (*)</p>
+				</div>
+				<button
+					className='bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 active:scale-90 active:shadow-sm transform transition-all duration-150 ease-out focus:outline-none'
+					style={addPadding}
+					onClick={handleClick}
+				>
+					Получить ссылки
+				</button>
+			</div>
 			<textarea
 				value={textValue}
 				onChange={handleChange}
